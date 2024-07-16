@@ -8,6 +8,8 @@ export default function JokeDetailsPage() {
 
   const { data, isLoading } = useSWR(`/api/jokes/${id}`);
 
+  // {_id: "klkdökasdköasdk"}
+
   if (isLoading) {
     return <h1>Loading...</h1>;
   }
@@ -18,7 +20,7 @@ export default function JokeDetailsPage() {
 
   return (
     <>
-      <small>ID: {id}</small>
+      <small>ID: {data._id}</small>
       <h1>{data.joke} </h1>
       <Link href="/">Back to all</Link>
     </>
